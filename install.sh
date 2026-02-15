@@ -12,20 +12,42 @@ if ! command -v cmake &> /dev/null; then
     echo "Error: cmake is not installed. (brew install cmake)"
     exit 1
 fi
+if ! brew list hwloc &>/dev/null; then
+    echo "Error: hwloc is not installed. (brew install hwloc)"
+    exit 1
+fi
+if ! brew list libuv &>/dev/null; then
+    echo "Error: libuv is not installed. (brew install libuv)"
+    exit 1
+fi
+if ! brew list openssl &>/dev/null; then
+    echo "Error: openssl is not installed. (brew install openssl)"
+    exit 1
+fi
 if ! command -v python3 &> /dev/null; then
     echo "Error: python3 is not installed."
     exit 1
 fi
 
 # 2. Clone Stratum Proxy
+if [ -d "ravencoin-stratum-proxy" ] && [ ! -f "ravencoin-stratum-proxy/requirements.txt" ]; then
+    echo "Stratum Proxy directory exists but is empty/incomplete. Cleaning up..."
+    rm -rf ravencoin-stratum-proxy
+fi
+
 if [ ! -d "ravencoin-stratum-proxy" ]; then
     echo "Cloning Stratum Proxy..."
-    git clone https://github.com/masker/ravencoin-stratum-proxy.git
+    git clone https://github.com/kralverde/ravencoin-stratum-proxy.git
 else
     echo "Stratum Proxy already exists."
 fi
 
 # 3. Clone & Build XMRig
+if [ -d "xmrig" ] && [ ! -f "xmrig/CMakeLists.txt" ]; then
+    echo "XMRig directory exists but is empty/incomplete. Cleaning up..."
+    rm -rf xmrig
+fi
+
 if [ ! -d "xmrig" ]; then
     echo "Cloning XMRig..."
     git clone https://github.com/xmrig/xmrig.git

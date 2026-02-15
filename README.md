@@ -8,7 +8,7 @@ Mining on a Mac usually means jet-engine fans and a hot laptop. This project sol
 ## 🌟 The Magic Components
 
 ### 1. The Gateway: Kralverde's Stratum Proxy 🌉
-We use the brilliant **[Ravencoin Stratum Proxy](https://github.com/masker/ravencoin-stratum-proxy)** originally by **Kralverde** (masker). This proxy allows modern miners like XMRig to communicate with the local Ravencoin Core wallet. Without this piece of genius engineering, local solo mining on Mac would be a headache. **Huge kudos to Kralverde!** 🙌
+We use the brilliant **[Ravencoin Stratum Proxy](https://github.com/kralverde/ravencoin-stratum-proxy)** originally by **Kralverde** (masker). This proxy allows modern miners like XMRig to communicate with the local Ravencoin Core wallet. Without this piece of genius engineering, local solo mining on Mac would be a headache. **Huge kudos to Kralverde!** 🙌
 
 ### 2. The Muscle: XMRig 💪
 We leverage the highly optimized [XMRig](https://github.com/xmrig/xmrig) for OpenCL mining on Apple Silicon GPUs. It's fast, efficient, and reliable.
