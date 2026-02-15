@@ -24,7 +24,8 @@ def send_cmd(cmd):
             if "error" in resp and resp["error"]:
                  print(f"API Error {cmd}: {resp['error']}")
             else:
-                 print(f"API: {cmd} OK - {resp}")
+                 # Success! Minimal logging
+                 pass
 
     except urllib.error.HTTPError as e:
         print(f"API HTTP Error {cmd}: {e.code} {e.reason}")
@@ -32,14 +33,17 @@ def send_cmd(cmd):
         print(f"API Error {cmd}: {e}")
 
 print("Starting Low Power Control Loop (5s ON / 15s OFF)...")
+print("Mining: ⚒️")
 try:
     while True:
         # Resume mining
         send_cmd("resume")
+        print("\r[Mining]   ⚒️ ", end="", flush=True)
         time.sleep(5)
         
         # Pause mining
         send_cmd("pause")
+        print("\r[Sleeping] 💤", end="", flush=True)
         time.sleep(15)
 
 except KeyboardInterrupt:

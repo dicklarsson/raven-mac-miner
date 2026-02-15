@@ -30,7 +30,7 @@ if ! command -v python3 &> /dev/null; then
 fi
 
 # 2. Clone Stratum Proxy
-if [ -d "ravencoin-stratum-proxy" ] && [ ! -f "ravencoin-stratum-proxy/requirements.txt" ]; then
+if [ -d "ravencoin-stratum-proxy" ] && [ ! -f "ravencoin-stratum-proxy/stratum-converter.py" ]; then
     echo "Stratum Proxy directory exists but is empty/incomplete. Cleaning up..."
     rm -rf ravencoin-stratum-proxy
 fi
@@ -41,6 +41,9 @@ if [ ! -d "ravencoin-stratum-proxy" ]; then
 else
     echo "Stratum Proxy already exists."
 fi
+
+echo "Installing Python dependencies (base58, requests, simplejson, websocket-client)..."
+pip3 install base58 requests simplejson websocket-client --quiet
 
 # 3. Clone & Build XMRig
 if [ -d "xmrig" ] && [ ! -f "xmrig/CMakeLists.txt" ]; then
