@@ -1,0 +1,23 @@
+# System files
+.DS_Store
+*.log
+*.pid
+
+# Build artifacts
+xmrig/build/
+xmrig/.build/
+ravencoin-stratum-proxy/__pycache__/
+*.pyc
+
+# IDEs
+.vscode/
+.idea/
+
+# Secrets (Ignore actual configs, keep templates)
+run_stratum.sh
+xmrig/build/config.json
+control_loop.py # Contains token? No, token is hardcoded "mytoken" but good to tokenize.
+
+# Keep example files!
+!run_stratum.sh.example
+!xmrig/build/config.json.example

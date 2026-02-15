@@ -1,0 +1,28 @@
+#!/bin/bash
+# Script to run the Ravencoin Stratum Proxy
+# Settings extracted from ~/Library/Application Support/Raven/raven.conf
+
+usage() {
+    echo "Usage: ./run_stratum.sh"
+    echo "Runs the stratum proxy on port 54325 connecting to local Ravencoin testnet node."
+}
+
+# Configuration
+STRATUM_PORT=54325
+NODE_IP="127.0.0.1"
+RPC_USER="YOUR_RPC_USER"
+RPC_PASS="YOUR_RPC_PASSWORD"
+RPC_PORT=18766
+ALLOW_EXTERNAL="false"
+IS_TESTNET="true"
+
+echo "Starting Stratum Proxy..."
+echo "  Miner Port: $STRATUM_PORT"
+echo "  Node RPC:   $RPC_USER:******@$NODE_IP:$RPC_PORT"
+echo "  Testnet:    $IS_TESTNET"
+
+# Run the proxy
+# Note: Using the cloned repository path
+cd ravencoin-stratum-proxy
+VERBOSE="true"
+python3 stratum-converter.py $STRATUM_PORT $NODE_IP $RPC_USER $RPC_PASS $RPC_PORT $ALLOW_EXTERNAL $IS_TESTNET $VERBOSE

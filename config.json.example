@@ -1,0 +1,179 @@
+{
+    "api": {
+        "id": null,
+        "worker-id": null
+    },
+    "http": {
+        "enabled": true,
+        "host": "127.0.0.1",
+        "port": 20000,
+        "access-token": "mytoken",
+        "restricted": false
+    },
+    "autosave": true,
+    "background": false,
+    "colors": true,
+    "title": true,
+    "randomx": {
+        "init": -1,
+        "init-avx2": -1,
+        "mode": "auto",
+        "1gb-pages": false,
+        "rdmsr": true,
+        "wrmsr": false,
+        "cache_qos": false,
+        "numa": true,
+        "scratchpad_prefetch_mode": 1
+    },
+    "cpu": {
+        "enabled": false,
+        "huge-pages": true,
+        "huge-pages-jit": false,
+        "hw-aes": null,
+        "priority": null,
+        "memory-pool": false,
+        "yield": true,
+        "max-threads-hint": 100,
+        "argon2-impl": null,
+        "cn-lite/0": false,
+        "cn/0": false
+    },
+    "opencl": {
+        "enabled": true,
+        "cache": true,
+        "loader": null,
+        "cn": [
+            {
+                "index": 0,
+                "intensity": 960,
+                "worksize": 8,
+                "strided_index": [0, 2],
+                "threads": [-1],
+                "unroll": 8
+            }
+        ],
+        "cn-heavy": [
+            {
+                "index": 0,
+                "intensity": 480,
+                "worksize": 8,
+                "strided_index": [0, 2],
+                "threads": [-1],
+                "unroll": 8
+            }
+        ],
+        "cn-lite": [
+            {
+                "index": 0,
+                "intensity": 2000,
+                "worksize": 8,
+                "strided_index": [0, 2],
+                "threads": [-1],
+                "unroll": 8
+            }
+        ],
+        "cn-pico": [
+            {
+                "index": 0,
+                "intensity": 2000,
+                "worksize": 8,
+                "strided_index": [0, 2],
+                "threads": [-1],
+                "unroll": 8
+            }
+        ],
+        "cn/2": [
+            {
+                "index": 0,
+                "intensity": 960,
+                "worksize": 8,
+                "strided_index": [0, 2],
+                "threads": [-1],
+                "unroll": 8
+            }
+        ],
+        "cn/upx2": [
+            {
+                "index": 0,
+                "intensity": 2000,
+                "worksize": 8,
+                "strided_index": [0, 2],
+                "threads": [-1],
+                "unroll": 8
+            }
+        ],
+        "kawpow": [
+            {
+                "index": 0,
+                "intensity": 2621440,
+                "worksize": 256,
+                "threads": [-1],
+                "unroll": 1
+            }
+        ],
+        "rx": [
+            {
+                "index": 0,
+                "intensity": 128,
+                "worksize": 8,
+                "threads": [-1],
+                "bfactor": 6,
+                "gcn_asm": false,
+                "dataset_host": false
+            }
+        ],
+        "cn-lite/0": false,
+        "cn/0": false
+    },
+    "cuda": {
+        "enabled": false,
+        "loader": null,
+        "cn-lite/0": false,
+        "cn/0": false
+    },
+    "log-file": null,
+    "donate-level": 1,
+    "donate-over-proxy": 1,
+    "pools": [
+        {
+            "algo": "kawpow",
+            "coin": null,
+            "url": "127.0.0.1:54325",
+            "user": "YOUR_WALLET_ADDRESS.worker_name",
+            "pass": "x",
+            "rig-id": null,
+            "nicehash": false,
+            "keepalive": true,
+            "enabled": true,
+            "tls": false,
+            "sni": false,
+            "tls-fingerprint": null,
+            "daemon": false,
+            "socks5": null,
+            "self-select": null,
+            "submit-to-origin": false
+        }
+    ],
+    "retries": 5,
+    "retry-pause": 5,
+    "print-time": 60,
+    "syslog": false,
+    "tls": {
+        "enabled": false,
+        "protocols": null,
+        "cert": null,
+        "cert_key": null,
+        "ciphers": null,
+        "ciphersuites": null,
+        "dhparam": null
+    },
+    "dns": {
+        "ip_version": 0,
+        "ttl": 30
+    },
+    "user-agent": null,
+    "verbose": 0,
+    "watch": true,
+    "pause-on-battery": false,
+    "pause-on-active": false
+}
